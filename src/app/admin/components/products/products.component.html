@@ -1,8 +1,8 @@
-<div class="container">
+<div class="container ">
    <div class="px-1 py-1">
-    <div >
-        <mat-accordion>
-            <mat-expansion-panel hideToggle>
+    <div class="flex" >
+          <div class="w-full mb-1"><mat-accordion class="w-3/6 ">
+            <mat-expansion-panel hideToggle class="bg-teal-900">
               <mat-expansion-panel-header>
                 <mat-panel-title>
                   Create Product
@@ -11,10 +11,10 @@
                    [Click to close or open]
                 </mat-panel-description>
               </mat-expansion-panel-header>
-              <app-create></app-create>
+              <app-create (createdProduct)="createdProduct($event)" ></app-create>
             </mat-expansion-panel>
-          </mat-accordion>
-          
+          </mat-accordion></div>
+         
     </div>
     <div><app-list></app-list></div>
    </div>

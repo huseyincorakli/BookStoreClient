@@ -1,9 +1,11 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgxSpinnerService } from "ngx-spinner";
 import { BaseComponent, SpinnerType } from 'src/app/base/base.component';
 import { AlertifyService } from 'src/app/services/admin/alertify.service';
 import { HttpClientService } from 'src/app/services/common/http-client.service';
+import { ListComponent } from './list/list.component';
+import { Create_Product } from 'src/app/contracts/create_product';
 declare var $: any
 @Component({
   selector: 'app-products',
@@ -16,14 +18,10 @@ export class ProductsComponent extends BaseComponent implements OnInit {
     super(spinner)
 
   }
-
+  @ViewChild(ListComponent) listComponent:ListComponent;
+  createdProduct(create_product:Create_Product){
+    this.listComponent.getProducts();
+  }
   ngOnInit(): void {
-    this.httpClientService.get({controller:'Product'}).subscribe(data=>console.log(data),
-    (errorResponse:HttpErrorResponse)=>{
-      console.log(errorResponse.message);
-      
-    });
-    //this.showSpinner(SpinnerType.Clock)
-    //this.alertfiy.message('deneme',{messageType:MessageType.Success,position:Position.TopRight})
   }
 }

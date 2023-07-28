@@ -7,8 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from '@angular/material/icon';
 import { AdminModule } from './admin/admin.module';
 import { ShowcaseModule } from './showcase/showcase.module';
-import { BaseComponent } from './base/base.component';
 import { HttpClientModule } from '@angular/common/http';
+
 
 
 
