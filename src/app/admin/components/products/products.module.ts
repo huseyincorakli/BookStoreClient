@@ -7,6 +7,8 @@ import { CreateComponent } from './create/create.component';
 import { ListComponent } from './list/list.component';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import {MatButtonModule} from '@angular/material/button';
     ]),
     MatExpansionModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    MatPaginatorModule,
+    MatTableModule
   ]
 })
 export class ProductsModule { }
